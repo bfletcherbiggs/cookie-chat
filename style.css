@@ -1,66 +1,97 @@
 *{
-  margin: 0px auto;
-  padding: 0px;
+  margin: 0 auto;
+  padding: 0;
   border-style: border-box;
+  font-family:'Roboto';
+}
+body{
+  background-color: #EDF0F5;
 }
 h1{
-  height:40vh;
+  margin: 2vmax 0;
+  color:#EDF0F5;
+  font-size: 5vmax;
+}
+.logo{
+  background: url(logodev.png) center center / contain no-repeat;
+  height: 6vmax;
+  width: 6vmax;
 }
 .submit-form{
-  height:10vh;
+  height:10vmax;
   width:100%;
   margin:0px auto;
+  display:flex;
+  align-items: flex-end;;
 }
-.fbootstrap {
-  margin:0px 0px;
-  padding:0px 0px;
-  width: 100%;
-  font-family: sans-serif;
-}
-
 .main-container {
   width: 100%;
 }
-
 .main-container h1 {
   text-align: center;
 }
-
 .text-box {
-  /*margin: 0px auto;*/
   width: 60%;
-  font-size:2rem;
+  font-size:2.5vmax;
+  border-radius: 3px;
+  height:3vmax;
+  padding-left: 5px;
 }
 .title-container{
-  height:50vh;
-  background: url(https://source.unsplash.com/random);
+  padding:3vmax;
+  background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(https://images.unsplash.com/photo-1466096115517-bceecbfb6fde) center center / cover;
   text-align: center;
+  box-shadow: 0px 2px 2px gray;
+  z-index: 1000;
 }
 .messages-container{
-  width:70%;
-  margin-top: 2vh;
+  width:50%;
+  padding: 2% 2%;
+  margin-top: .5vmax;
+  display:block;
+  background-color: #EDF0F5;
+  min-height: 500px;
+  overflow: scroll;
+
+
 }
 .mc-sub{
+  float:left;
+  clear:both;
   display:flex;
-  flex-flow: row wrap;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  height:15vh;
-  border: 1px solid black;
+  flex-flow: column;
+  flex-wrap: nowrap;
+  text-align: left;
+  box-shadow: 0px 2px 2px gray;
+  border-radius: 20px;
+  background: white;
+  margin: 1vh 0vh;
+  width: fit-content;
+  padding: 1vmax 1vmax;
 }
 .mc-sub-message{
-  width:100%;
-  align-self: flex-start;
+  margin-left: 0;
   text-align:left;
-  padding-left: 1vw;
-  font-size: 2rem;
+  font-size: 2vmax;
 }
 .mc-sub-date{
-  width:100%;
-  text-align:right;
+  text-align:left;
   color:gray;
-  padding-right:1vw;
-  font-size: 1rem;
+  font-size: 1vmax;
+  margin-left: 0;
+}
+.blue {
+  background-color: #3C5A53;
+  color:white;
+  text-align:right;
+  float:right;
+  clear:both;
+}
+.myMessage{
+  text-align:right;
+  margin-right: 0;
+}
+.myDate{
+  margin-right: 0;
+  text-align: right;
 }

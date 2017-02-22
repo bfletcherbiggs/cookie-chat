@@ -28,15 +28,14 @@ angular.module('chatroom').service('messageService', function($http){
       method: 'POST',
       url: 'https://practiceapi.devmounta.in/api/chats',
       data: {message: message}
-    }).then(function(response){
-    });
+    })
   };
 
   this.postCookie = function(cookie){
     return $http({
       method: 'POST',
       url: 'https://practiceapi.devmounta.in/api/cookies',
-      data: {cookies: {cookie:1}}
+      data: {}
     }).then(function(response){
     });
   };

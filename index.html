@@ -5,24 +5,27 @@
     <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
     <title>Dev Mountain Chat Room</title>
 </head>
 
-<body class="fbootstrap" ng-controller="mainCtrl">
+<body ng-controller="mainCtrl">
     <div class="main-container">
         <div class="title-container">
+            <div class="logo">
+            </div>
             <h1> DevMountain Chat Room </h1>
             <form class ="submit-form" ng-submit="postMessage(message);postCookie()">
                 <input class="form-control text-box" type="text" ng-model="message" placeholder=" Compose Message">
             </form>
         </div>
         <div class="messages-container">
-            <div class="mc-sub" ng-repeat="message in messages | orderBy: '-createdAt'">
-                <div class="mc-sub-message">
+            <div class="mc-sub" ng-repeat="message in messages | orderBy: '-createdAt'" ng-class="{blue: message.cookie === 'Luscious Fudge Cookie'}">
+                <div class="mc-sub-message" ng-class="{myMessage: message.cookie === 'Luscious Fudge Cookie'}">
                     {{message.message}}
                 </div>
-                <div class="mc-sub-date">
-                    {{message.createdAt | date:'medium'}}
+                <div class="mc-sub-date"ng-class="{myDate: message.cookie === 'Luscious Fudge Cookie'}">
+                    {{message.createdAt | date:'EEEE hh:mm a'}}
                 </div>
             </div>
         </div>
