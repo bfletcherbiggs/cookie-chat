@@ -1,25 +1,42 @@
 <!DOCTYPE HTML>
 <html ng-app="chatroom">
-  <head>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body ng-controller="mainCtrl">
-    <div class="main-container">
-      <h1> DevMountain Chat Room </h1>
-      <form ng-submit="postMessage(message)">
-        <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
-      </form>
-      <div class="messages-container">
-        <p ng-repeat="message in messages ">
-          {{message.message}} </p>
-      </div>
-    </div>
 
+<head>
+    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Dev Mountain Chat Room</title>
+</head>
+
+<body class="fbootstrap" ng-controller="mainCtrl">
+    <div class="main-container">
+        <div class="title-container">
+            <h1> DevMountain Chat Room </h1>
+            <form class ="submit-form" ng-submit="postMessage(message);postCookie()">
+                <input class="form-control text-box" type="text" ng-model="message" placeholder=" Compose Message">
+            </form>
+        </div>
+        <div class="messages-container">
+            <div class="mc-sub" ng-repeat="message in messages | orderBy: '-createdAt'">
+                <div class="mc-sub-message">
+                    {{message.message}}
+                </div>
+                <div class="mc-sub-date">
+                    {{message.createdAt | date:'medium'}}
+                </div>
+            </div>
+        </div>
+        <!-- Cookies -->
+        <!-- <div ng-repeat="cookie in cookies">
+        {{cookie}}
+      </div> -->
+    </div>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/mainCtrl.js"></script>
     <script src="js/messageService.js"></script>
-  </body>
+    <script src="js/filter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+</body>
+
 </html>
